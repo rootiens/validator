@@ -7,7 +7,8 @@ Various validators for Golang
 
 ## Things you can validate
 
-- [Iranian National ID](https://github.com/rootiens/validator/new/master?readme=1#national-id)
+- [Iranian National ID](https://github.com/rootiens/validator#national-id)
+- [Iranian Phone Number](https://github.com/rootiens/validator#phone-number)
 
 
 ## Installation
@@ -38,4 +39,26 @@ func main() {
   }
 }
 ```
+
+### Phone Number
+
+```go
+package main
+
+import (
+     "fmt"
+     "github.com/rootiens/validator/phone"
+)
+
+func main() {
+  ok := phone.IsValid("123456")
+
+  if !ok {
+    fmt.Println("Invalid Phone")
+  }
+}
+```
+
+
+
 
