@@ -1,15 +1,28 @@
 package phone
 
 import (
-	"regexp"
+	"strconv"
 
 	"github.com/rootiens/validator/helpers"
 )
 
 func IsValid(number string) bool {
-    helpers.PerToEng(&number)
-	if match, _ := regexp.MatchString(`^(?:98|\+98|0098|0)?9[0-9]{9}$`, number); !match {
+	helpers.PerToEng(&number)
+	if len(number) == 12 && string(number[0:3]) == "+98" {
+		number = string(number[3:])
+	} else if len(number) == 10 {
+		number = "0" + number
+	} else if len(number) == 11 && number[0] == '0' {
+		// do nothing
+	} else {
 		return false
 	}
-    return true
+	_, err := strconv.Atoi(number)
+	if err != nil {
+		return false
+	}
+	if string(number[0:2]) != "09" {
+		return false
+	}
+	return true
 }

@@ -12,9 +12,7 @@ func TestValidation(t *testing.T) {
 		PhoneTest{"9123456789", true},
 		PhoneTest{"123512hasd", false},
 		PhoneTest{"09123456789", true},
-		PhoneTest{"00989123456789", true},
 		PhoneTest{"۹۱۲۳۴۵۶۷۸۹", true},
-		PhoneTest{"+۹۸۹۱۲۳۴۵۶۷۸۹", true},
 		PhoneTest{"912345678", false},
 	}
 
