@@ -13,7 +13,6 @@ Various validators for Golang
 
 ## Installation
 
-Install my-project with npm
 
 ```bash
 go get -u github.com/rootiens/validator
